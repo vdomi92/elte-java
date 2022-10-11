@@ -2,6 +2,8 @@ package utils;
 
 public class DoubleVector{
 
+    public class InvalidDimensionsException extends Throwable {};
+
     private double[] coordinates;
 
     public DoubleVector(){
@@ -15,10 +17,11 @@ public class DoubleVector{
         this.coordinates = newCoordinates;
     }
 
-    public DoubleVector multiplyVectors(DoubleVector v){
+    public DoubleVector multiplyVectors(DoubleVector v) throws InvalidDimensionsException{
         
         if(this.coordinates.length != v.coordinates.length){
             System.out.println("Vectors must be of the same dimension");
+            throw new InvalidDimensionsException();
         }else{
             double[] v3coords = new double[this.coordinates.length];
             for(int i = 0; i < this.coordinates.length; i++){
@@ -30,9 +33,10 @@ public class DoubleVector{
         return this;
     }
 
-    public DoubleVector add(DoubleVector v){
+    public DoubleVector add(DoubleVector v) throws InvalidDimensionsException{
         if(this.coordinates.length != v.coordinates.length){
             System.out.println("Vectors must be of the same dimension");
+            throw new InvalidDimensionsException();
         }else{
             double[] v3coords = new double[this.coordinates.length];
             for(int i = 0; i < this.coordinates.length; i++){
@@ -44,9 +48,10 @@ public class DoubleVector{
         return this;
     }
 
-    public DoubleVector deduct(DoubleVector v){
+    public DoubleVector deduct(DoubleVector v) throws InvalidDimensionsException{
         if(this.coordinates.length != v.coordinates.length){
             System.out.println("Vectors must be of the same dimension");
+            throw new InvalidDimensionsException();
         }else{
             double[] v3coords = new double[this.coordinates.length];
             for(int i = 0; i < this.coordinates.length; i++){
@@ -61,7 +66,6 @@ public class DoubleVector{
     public DoubleVector multiplyByScalar(double scalar){
         for(double element: this.coordinates){
             element *= scalar;
-            System.out.println(element);
         }
         return this;
     }
