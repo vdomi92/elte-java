@@ -23,7 +23,7 @@ class VectorMain{
             System.out.println(vector1.multiplyVectors(vector1).toString());
             System.out.println(vector2.multiplyVectors(vector3).toString());
             System.out.println(vector3.multiplyVectors(vector3).toString());     
-        }catch(Exception e){
+        }catch(DoubleVector.InvalidDimensionsException e){
             System.out.println("Invalid vector dimensions");
         }
    

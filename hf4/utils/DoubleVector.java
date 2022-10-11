@@ -20,7 +20,6 @@ public class DoubleVector{
     public DoubleVector multiplyVectors(DoubleVector v) throws InvalidDimensionsException{
         
         if(this.coordinates.length != v.coordinates.length){
-            System.out.println("Vectors must be of the same dimension");
             throw new InvalidDimensionsException();
         }else{
             double[] v3coords = new double[this.coordinates.length];
@@ -35,7 +34,6 @@ public class DoubleVector{
 
     public DoubleVector add(DoubleVector v) throws InvalidDimensionsException{
         if(this.coordinates.length != v.coordinates.length){
-            System.out.println("Vectors must be of the same dimension");
             throw new InvalidDimensionsException();
         }else{
             double[] v3coords = new double[this.coordinates.length];
@@ -50,7 +48,6 @@ public class DoubleVector{
 
     public DoubleVector deduct(DoubleVector v) throws InvalidDimensionsException{
         if(this.coordinates.length != v.coordinates.length){
-            System.out.println("Vectors must be of the same dimension");
             throw new InvalidDimensionsException();
         }else{
             double[] v3coords = new double[this.coordinates.length];
