@@ -61,7 +61,6 @@ public class DoubleVector{
     public DoubleVector multiplyByScalar(double scalar){
         for(double element: this.coordinates){
             element *= scalar;
-            System.out.println(element);
         }
         return this;
     }
