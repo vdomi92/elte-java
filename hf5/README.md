@@ -1,0 +1,3 @@
+```
+Készítsen egy TelevisionShop felsorolási típust. A felsorolási tagok legyenek SAMSUNG, LG, SKYWORTH, SONY, SHARP. A konstruktorukban az első tag legyen, hogy hány db készülék van az adott márkából raktáron, a második és a harmadik az elérhető átmérők minimuma és maximuma legyen. Készítsen hozzá olyan metódusokat, amelyekkel ki tudja íratni az összes lehetséges kapható méret minimumát és maximumát típustól függetlenül (statikus) és olyat, amely adott márkára kiírja, hogy mekkora méretű tévéket lehet kapni. Készítsen statikus metódust, amellyel kiírja a rendelkezésre álló készletről minden tudhatót!
+```
