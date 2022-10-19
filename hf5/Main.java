@@ -3,6 +3,6 @@ public class Main{
         TelevisionShop.listMinimumSize();
         TelevisionShop.listMaximumSize();
         TelevisionShop.listAllStorageItems();
-        TelevisionShop.listSizesByBrand(TelevisionShop.SAMSUNG)
+        TelevisionShop.listSizesByBrand(TelevisionShop.SAMSUNG);
     }
 }
