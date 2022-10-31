@@ -24,7 +24,6 @@ public class Stack{
         if(this.getActualSize() == this.getMaxLength()){
             this.maxLength = this.getMaxLength() * 2;
             Integer[] tmpStack = new Integer[this.maxLength];
-            for(int i = 0; i < this.maxLength; i++){ tmpStack[i] = null; };
             for(int i = 0; i < this.maxLength / 2; i++) { tmpStack[i] = myStack[i]; };
             this.myStack = tmpStack;
         }
@@ -40,6 +39,12 @@ public class Stack{
         try{
             if(this.isEmpty()){
                 throw new NoSuchElementException("Stack is already empty!");
+            }
+            if(this.getActualSize() * 2 == this.getMaxLength()){
+                this.maxLength = this.getActualSize();
+                Integer[] tmpStack = new Integer[this.maxLength];
+                for(int i = 0; i < this.maxLength; i++) { tmpStack[i] = myStack[i]; };
+                this.myStack = tmpStack;
             }
             this.myStack[this.getActualSize()] = null;
             this.actualSize = this.getActualSize() - 1;
