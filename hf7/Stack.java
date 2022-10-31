@@ -36,16 +36,11 @@ public class Stack{
     }
 
     public Integer pop(){
-        Integer retVal;
+        Integer retVal = null;
         try{
             if(this.empty()){
                 throw new NoSuchElementException("Stack is already empty!");
-            }      
-        }
-        catch(NoSuchElementException e){
-            System.out.println("Stack is already empty!");
-        }
-        finally{
+            }
             if(this.size() * 2 == this.getMaxLength()){
                 this.maxLength = this.size();
                 Integer[] tmpStack = new Integer[this.maxLength];
@@ -54,7 +49,10 @@ public class Stack{
             }
             retVal = this.myStack[this.size()];
             this.myStack[this.size()] = null;
-            this.actualSize = this.size() - 1;     
+            this.actualSize = this.size() - 1;         
+        }
+        catch(NoSuchElementException e){
+            System.out.println("Stack is already empty!");
         }
         return retVal;
     }
