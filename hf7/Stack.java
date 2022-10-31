@@ -6,7 +6,7 @@ public class Stack{
     private int maxLength;
     private Integer[] myStack;
 
-    public int getActualSize(){ return this.actualSize; }
+    public int size(){ return this.actualSize; }
     public int getMaxLength(){ return this.maxLength; }
     public Integer[] getMyStack(){ return this.myStack; }
 
@@ -21,33 +21,33 @@ public class Stack{
 
     public void push(int x){
         Integer newValue = new Integer(x);
-        if(this.getActualSize() == this.getMaxLength()){
+        if(this.size() == this.getMaxLength()){
             this.maxLength = this.getMaxLength() * 2;
             Integer[] tmpStack = new Integer[this.maxLength];
             for(int i = 0; i < this.maxLength / 2; i++) { tmpStack[i] = myStack[i]; };
             this.myStack = tmpStack;
         }
-        this.actualSize = this.getActualSize() + 1; 
-        this.myStack[this.getActualSize()] = newValue;
+        this.actualSize = this.size() + 1; 
+        this.myStack[this.size()] = newValue;
     }
 
-    public boolean isEmpty(){
-        return this.getActualSize() == 0;
+    public boolean empty(){
+        return this.size() == 0;
     }
 
     public void pop(){
         try{
-            if(this.isEmpty()){
+            if(this.empty()){
                 throw new NoSuchElementException("Stack is already empty!");
             }
-            if(this.getActualSize() * 2 == this.getMaxLength()){
-                this.maxLength = this.getActualSize();
+            if(this.size() * 2 == this.getMaxLength()){
+                this.maxLength = this.size();
                 Integer[] tmpStack = new Integer[this.maxLength];
                 for(int i = 0; i < this.maxLength; i++) { tmpStack[i] = myStack[i]; };
                 this.myStack = tmpStack;
             }
-            this.myStack[this.getActualSize()] = null;
-            this.actualSize = this.getActualSize() - 1;
+            this.myStack[this.size()] = null;
+            this.actualSize = this.size() - 1;
         }
         catch(NoSuchElementException e){
             System.out.println("Stack is already empty!");
