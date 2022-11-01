@@ -1,4 +1,6 @@
+package mystack;
 import java.util.*;
+
 
 public class Stack{
 
