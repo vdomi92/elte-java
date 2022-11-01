@@ -1,4 +1,4 @@
-package mystack;
+package valami;
 import java.util.*;
 
 
