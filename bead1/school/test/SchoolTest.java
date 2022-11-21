@@ -11,6 +11,7 @@ import school.subject.*;
 
 public class SchoolTest{
     Schedule s1, s2, s3, s4;
+    Schedule[] schedules = new Schedule[4];
     //Ebben a @BeforeEach annotációjú beforeEach metódus töltse fel a scheduleX.txt használatával a Schedule elemtípusú schedules tömb négy elemét, ahol X értéke 4, 5, 6 és 7.
     //A fájlokat úgy kell elkészíteni, hogy az Xedik évfolyamnak megfelelő kitöltésűek legyenek, és naponta X óra legyen bennük.
     @BeforeEach
@@ -19,6 +20,10 @@ public class SchoolTest{
         s2 = new Schedule("school/test/schedule5.txt");
         s3 = new Schedule("school/test/schedule6.txt");
         s4 = new Schedule("school/test/schedule7.txt");
+        schedules[0] = new Schedule("school/test/schedule4.txt");
+        schedules[1] = new Schedule("school/test/schedule5.txt");
+        schedules[2] = new Schedule("school/test/schedule6.txt");
+        schedules[3] = new Schedule("school/test/schedule7.txt");
     }
 
     //classesPerDay: mind a négy betöltött órarend helyes getClassesPerDay értéket mutat
